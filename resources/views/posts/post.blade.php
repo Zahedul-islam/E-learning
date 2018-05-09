@@ -1,12 +1,21 @@
+@extends('master')
 
-  @include('inc.header')
+@section('content')
+
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Add Post</h1>
+    </div>
+</header>
+
+<br/><br/>
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Add Post</div>
-
-                <div class="card-body">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel">
+                
+                <div class="panel-body">
 
                 @if(session('response'))
                     <div class="alert alert-success">{{session('response')}}</div>
@@ -80,7 +89,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Add Post') }}
                                 </button>
@@ -93,4 +102,4 @@
         </div>
     </div>
 </div>
- @include('inc.footer')  
+@endsection

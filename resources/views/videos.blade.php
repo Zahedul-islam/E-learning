@@ -1,5 +1,6 @@
-    @include('inc.header')  
-	<!-- /.navbar -->
+@extends('master')
+
+@section('content')
 
 		<header id="head" class="secondary">
             <div class="container">
@@ -38,10 +39,10 @@
 
 									<article class="col-sm-4 isotopeItem webdesign">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img1.jpg" alt="" />
+											<img src="/assets/images/portfolio/img1.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img1.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img1.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -51,10 +52,10 @@
 
 									<article class="col-sm-4 isotopeItem photography">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img2.jpg" alt="" />
+											<img src="/assets/images/portfolio/img2.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img2.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img2.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -65,10 +66,10 @@
 
 									<article class="col-sm-4 isotopeItem photography">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img3.jpg" alt="" />
+											<img src="/assets/images/portfolio/img3.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img3.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img3.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -78,10 +79,10 @@
 
 									<article class="col-sm-4 isotopeItem print">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img4.jpg" alt="" />
+											<img src="/assets/images/portfolio/img4.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img4.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img4.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -91,10 +92,10 @@
 
 									<article class="col-sm-4 isotopeItem photography">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img5.jpg" alt="" />
+											<img src="/assets/images/portfolio/img5.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img5.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img5.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -104,10 +105,10 @@
 
 									<article class="col-sm-4 isotopeItem webdesign">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img6.jpg" alt="" />
+											<img src="/assets/images/portfolio/img6.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img6.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img6.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -117,10 +118,10 @@
 
 									<article class="col-sm-4 isotopeItem print">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img7.jpg" alt="" />
+											<img src="/assets/images/portfolio/img7.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img7.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img7.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -130,10 +131,10 @@
 
 									<article class="col-sm-4 isotopeItem photography">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img8.jpg" alt="" />
+											<img src="/assets/images/portfolio/img8.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img8.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img8.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -143,10 +144,10 @@
 
 									<article class="col-sm-4 isotopeItem print">
 										<div class="portfolio-item">
-											<img src="images/portfolio/img9.jpg" alt="" />
+											<img src="/assets/images/portfolio/img9.jpg" alt="" />
 											<div class="portfolio-desc align-center">
 												<div class="folio-info">
-													<a href="images/portfolio/img9.jpg" class="fancybox">
+													<a href="/assets/images/portfolio/img9.jpg" class="fancybox">
 														<h5>Project Title</h5>
 														<i class="fa fa-link fa-2x"></i></a>
 												</div>
@@ -166,5 +167,5 @@
 		</div>
 
 	</section>
-	<!-- /container -->
-    @include('inc.footer')  
+
+@endsection

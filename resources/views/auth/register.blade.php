@@ -1,15 +1,44 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
+
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Sign Up</h1>
+    </div>
+</header>
+
+<br/><br/>
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel">
 
-                <div class="card-body">
+                <div class="panel-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <div class="form-group row justify-content-end">
+
+                            <div class="col-md-4 col-md-offset-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="role" id="optionsRadios1" value="teacher" >
+                                      Teacher
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="role" id="optionsRadios2" value="student">
+                                      Student
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -40,93 +69,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('Contact') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="contact" type="text" class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" value="{{ old('contact') }}" required autofocus>
-
-                                @if ($errors->has('contact'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('contact') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="designation" class="col-md-4 col-form-label text-md-right">{{ __('Designation') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="designation" type="text" class="form-control{{ $errors->has('designation') ? ' is-invalid' : '' }}" name="designation" value="{{ old('designation') }}" required autofocus>
-
-                                @if ($errors->has('designation'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('designation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
-
-                                @if ($errors->has('address'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="workplace" class="col-md-4 col-form-label text-md-right">{{ __('Work Place') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="workplace" type="text" class="form-control{{ $errors->has('workplace') ? ' is-invalid' : '' }}" name="workplace" value="{{ old('workplace') }}" required autofocus>
-
-                                @if ($errors->has('workplace'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('workplace') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="profile_pic" class="col-md-4 col-form-label text-md-right">{{ __('Enter Profile Picture') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="profile_pic" type="file" class="form-control{{ $errors->has('profile_pic') ? ' is-invalid' : '' }}" name="profile_pic" required>
-
-                                @if ($errors->has('profile_pic'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('profile_pic') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                         <div class="col-md-6">
-                              <legend>Radio buttons</legend>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="1" >
-                                  Teacher
-                                </label>
-                              </div>
-                              <div class="form-check">
-                              <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="0">
-                                  Student
-                                </label>
-                              </div>
-                              
-                            </div>
-
-                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -148,8 +90,50 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile" type="text" class="form-control{{ $errors->has('mobile') ? ' is-invalid' : '' }}" name="mobile" value="{{ old('mobile') }}" required autofocus>
+
+                                @if ($errors->has('mobile'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
+
+                                @if ($errors->has('address'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="profile_pic" class="col-md-4 col-form-label text-md-right">{{ __('Enter Profile Picture') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="profile_pic" type="file" class="form-control{{ $errors->has('profile_pic') ? ' is-invalid' : '' }}" name="profile_pic">
+
+                                @if ($errors->has('profile_pic'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('profile_pic') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>

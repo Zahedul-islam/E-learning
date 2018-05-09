@@ -12,7 +12,6 @@ use App\Content;
 class ContentController extends Controller
 {
      
-    
     public function class(){
         return view('classes.class');
     }

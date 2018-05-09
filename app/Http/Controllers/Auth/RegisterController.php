@@ -55,15 +55,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'contact' =>'required',
-            'designation' =>'required',
-            'address' =>'required',
-            'workplace' =>'required',
-            'profile_pic' =>'required',           
+            'email' => 'required|string|email|max:100|unique:users',
+            'address' =>'required',        
             'password' => 'required|string|min:6|confirmed',
-            'optionsRadios' =>'required',
-
+            'role' => 'required'
         ]);
     }
 
@@ -75,8 +70,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $url = "";
 
+        $url = "";
+        
         if(Input::hasFile('profile_pic')){
             $file = Input::file('profile_pic');
             $file->move(public_path(). '/uploads/', $file->getClientOriginalName());
@@ -89,13 +85,11 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'contact' => $data['contact'],
-            'designation' => $data['designation'],
+            'mobile' => $data['mobile'],
             'address' =>$data['address'],
-            'workplace' =>$data['workplace'],
             'password' => Hash::make($data['password']),
-            'profile_pic' => $profile_pic,
-            'optionsRadios' => $data['optionsRadios']
+            'role' => $data['role'],
+            'profile_pic' => $profile_pic
         ]);
     }
 }

@@ -1,4 +1,7 @@
-@include('inc.header')    <!-- /.navbar -->
+@extends('master')
+
+@section('content')
+
 
  	<header id="head" class="secondary">
             <div class="container">
@@ -15,7 +18,7 @@
             <section class="col-sm-8 maincontent">
                 <h3>About Us</h3>
                 <p>
-                    <img src="images/about.jpg" alt="" class="img-rounded pull-right" width="300">
+                    <img src="/assets/images/about.jpg" alt="" class="img-rounded pull-right" width="300">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.
                 </p>
                 <p>Consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
@@ -73,7 +76,7 @@
                         <!-- Image Hover Block -->
                         <div class="member-img">
                             <!-- Image  -->
-                            <img class="img-responsive" src="images/photo-1.jpg" alt="">
+                            <img class="img-responsive" src="/assets/images/photo-1.jpg" alt="">
                         </div>
                         <!-- Member Details -->
                         <h4>John Doe</h4>
@@ -94,7 +97,7 @@
                         <!-- Image Hover Block -->
                         <div class="member-img">
                             <!-- Image  -->
-                            <img class="img-responsive" src="images/photo-2.jpg" alt="">
+                            <img class="img-responsive" src="/assets/images/photo-2.jpg" alt="">
                         </div>
                         <!-- Member Details -->
                         <h4>Larry Doe</h4>
@@ -115,7 +118,7 @@
                         <!-- Image Hover Block -->
                         <div class="member-img">
                             <!-- Image  -->
-                            <img class="img-responsive" src="images/photo-3.jpg" alt="">
+                            <img class="img-responsive" src="/assets/images/photo-3.jpg" alt="">
                         </div>
                         <!-- Member Details -->
                         <h4>Ranith Kays</h4>
@@ -136,7 +139,7 @@
                         <!-- Image Hover Block -->
                         <div class="member-img">
                             <!-- Image  -->
-                            <img class="img-responsive" src="images/photo-4.jpg" alt="">
+                            <img class="img-responsive" src="/assets/images/photo-4.jpg" alt="">
                         </div>
                         <!-- Member Details -->
                         <h4>Joan Ray</h4>
@@ -154,4 +157,5 @@
             </div>
         </div>
     </section>
-    @include('inc.footer')  
+
+@endsection

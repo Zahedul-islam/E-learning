@@ -1,4 +1,6 @@
-    @include('inc.header')  
+@extends('master')
+
+@section('content')
 
 		<header id="head" class="secondary">
             <div class="container">
@@ -144,4 +146,5 @@
 			</div>
 		</div>
 	</section>
-     @include('inc.footer')  
+
+@endsection

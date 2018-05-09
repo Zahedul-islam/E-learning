@@ -1,13 +1,20 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
+
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Login</h1>
+    </div>
+</header>
+
+<br/><br/>
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel">
+                <div class="panel-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -40,7 +47,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
@@ -50,7 +57,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
@@ -58,6 +65,12 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 col-md-offset-4">
+                                Don't have an account? <a href="/register">Sign up</a>
                             </div>
                         </div>
                     </form>

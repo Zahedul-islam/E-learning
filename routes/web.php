@@ -11,14 +11,28 @@
 |
 */
 
+Auth::routes();
 
-Route::get('/', 'CreatesController@index'); 
-Route::get('/about', 'CreatesController@about'); 
-Route::get('/contact', 'CreatesController@contact'); 
-Route::get('/courses', 'CreatesController@courses'); 
-Route::get('/price', 'CreatesController@price'); 
-Route::get('/sidebarright', 'CreatesController@sidebarright'); 
-Route::get('/videos', 'CreatesController@videos'); 
+Route::get('/', function() {
+	return view('home');
+})->name('home');
+
+Route::get('/about', function() {
+	return view('about');
+})->name('about');
+
+Route::get('/contact', function(){
+	return view('contact');
+})->name('contact');
+
+Route::get('/courses', function() {
+	return view('courses');
+})->name('courses');
+
+Route::get('/videos', function() {
+	return view('videos');
+})->name('videos');
+
 Route::get('/subject', 'ContentController@subject'); 
 Route::post('/addSubject', 'ContentController@addSubject');
 Route::get('/class', 'ContentController@class'); 
@@ -29,6 +43,14 @@ Route::post('/addContent', 'ContentController@addContent');
 Route::get('/post', 'PostController@post');
 Route::post('/addPost', 'PostController@addPost');
 
-Auth::routes();
+Route::middleware(['check.role:student'])->group(function() {
 
-Route::get('/home', 'HomeController@index')->name('home');
+});
+
+Route::middleware(['check.role:teacher'])->group(function() {
+
+});
+
+Route::middleware(['check.role:admin'])->group(function() {
+
+});

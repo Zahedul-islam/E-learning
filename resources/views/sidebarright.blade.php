@@ -1,6 +1,6 @@
+@extends('master')
 
-    @include('inc.header')  
-	<!-- /.navbar -->
+@section('content')
 
 	<header id="head" class="secondary">
             <div class="container">
@@ -59,5 +59,5 @@
 
 		</div>
 	</section>
-	<!-- /container -->
-     @include('inc.footer')  
+
+@endsection

@@ -1,9 +1,18 @@
-@include('inc.header')
+@extends('master')
 
+@section('content')
+
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Content</h1>
+    </div>
+</header>
+
+<br/><br/>
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-2">
             @if(count($errors) > 0)
                     @foreach($errors->all() as $error)
 
@@ -15,10 +24,9 @@
                 @if(session('response'))
                     <div class="alert alert-success">{{session('response')}}</div>
                 @endif
-            <div class="card">
-                <div class="card-header">Content</div>
-                
-                <div class="card-body">
+            <div class="panel">
+
+                <div class="panel-body">
                     
                     <form method="POST" action="{{ url('/addContent') }}">
                         @csrf
@@ -38,7 +46,7 @@
                         </div>
    
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Add Content') }}
                                 </button>
@@ -53,6 +61,4 @@
     </div>
 </div>
 
-
-
-@include('inc.footer')
+@endsection
