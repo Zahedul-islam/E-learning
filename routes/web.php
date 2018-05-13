@@ -25,6 +25,18 @@ Route::get('/contact', function(){
 	return view('contact');
 })->name('contact');
 
+Route::get('/questions', function(){
+	return view('questions.questions');
+})->name('questions');
+
+/*Route::get('/add_questions', function(){
+	return view('questions.add_questions');
+})->name('add_questions')->middleware(['auth']);
+*/
+
+Route::get('/add_questions', 'QuestionController@index');
+Route::post('/add_question', 'QuestionController@addQuestion');
+
 Route::get('/courses', function() {
 	return view('courses');
 })->name('courses');

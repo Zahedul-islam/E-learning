@@ -30,6 +30,9 @@
 
 				<li @if(Route::currentRouteName() == "contact") class="active" @endif><a href="/contact">Contact</a></li>
 
+				<li @if(Route::currentRouteName() == "questions") class="active" @endif><a href="/questions">Questions</a></li>
+
+
 				@if(Auth::check())
 				<li>
 					<a class="dropdown-item" href="{{ route('logout') }}"

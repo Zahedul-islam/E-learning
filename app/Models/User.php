@@ -35,4 +35,8 @@ class User extends Authenticatable
 
         return false;
     }
+
+    public function questions() {
+        return $this->hasMany('App\Models\Question');
+    }
 }
