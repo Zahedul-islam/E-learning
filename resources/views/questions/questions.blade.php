@@ -23,9 +23,33 @@
                         </div>
                     @endif
 
-                    <div class="row">
-                       <a href="{{ url('/add_questions') }}" class="btn btn-info" role="button">Add Question</a> 
+
+                    <div class="container">
+                        <div class="row">
+                            <section class="col-md-8 justify-content-center">
+                        @if(count($questions) > 0)
+                            @foreach($questions->all() as $question)
+                                
+                                <h4><a href="/questions/{{$question->id}}">{{$question->post_title}}</a></h4>
+                                
+                                <p>{{ substr($question->post_body,0,150) }}</p>
+
+                                <h5>By {{ $question->user->name }} &nbsp;&nbsp;
+                                On {{ Carbon\Carbon::parse('2010-05-16 22:40:10')->format('l jS \\of F Y h:i:s A') }}</h5>
+                               <hr/>
+                            @endforeach
+                            @else
+                                <p>No Post Available</p>
+                        @endif
+                        
+                            </section>
+                       </div> 
                     </div>
+
+                    
+                </div>
+                <div class="row">
+                       <a href="{{ url('/add_questions') }}" class="btn btn-info" role="button">Add Question</a> 
                 </div>
             </div>
         </div>

@@ -5,16 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use Auth;
+use DB;
+use Carbon\Carbon;
 
 class QuestionController extends Controller
 {
 
 	public function __construct(){
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 	public function index() {
-		return view('questions.add_questions');
+
+        $questions = Question::all();
+        
+        return view('questions.questions', ['questions' => $questions]);
+		//return view('questions.add_questions');
 	}
 
    	public function addQuestion(Request $request){
