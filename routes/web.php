@@ -29,8 +29,11 @@ Route::get('/questions', 'QuestionController@index')->name('questions');
 
 Route::middleware(['auth'])->group(function(){
 
-	Route::get('/add_questions', 'QuestionController@index');
-	Route::post('/add_question', 'QuestionController@addQuestion');
+	Route::get('/add_question', function(){
+		return view('questions.add_questions');
+	});
+
+	Route::post('/post_question', 'QuestionController@postQuestion');
 
 });
 

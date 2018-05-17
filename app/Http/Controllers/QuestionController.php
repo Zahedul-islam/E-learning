@@ -23,7 +23,7 @@ class QuestionController extends Controller
 		//return view('questions.add_questions');
 	}
 
-   	public function addQuestion(Request $request){
+   	public function postQuestion(Request $request){
 
     	$request->validate([
     		'post_title' =>'required',

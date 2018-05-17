@@ -49,7 +49,7 @@
                     
                 </div>
                 <div class="row">
-                       <a href="{{ url('/add_questions') }}" class="btn btn-info" role="button">Add Question</a> 
+                       <a href="{{ url('/add_question') }}" class="btn btn-info" role="button">Add Question</a> 
                 </div>
             </div>
         </div>

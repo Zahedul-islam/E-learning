@@ -24,7 +24,7 @@
                     @endif
 
                     <div class="row">
-                         <form method="POST" action="{{ url('/add_question') }}" enctype="multipart/form-data">
+                         <form method="POST" action="{{ url('/post_question') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
