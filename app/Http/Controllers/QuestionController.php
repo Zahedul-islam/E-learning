@@ -12,7 +12,7 @@ class QuestionController extends Controller
 {
 
 	public function __construct(){
-		//$this->middleware('auth');
+		$this->middleware('auth', ['except'=>['index']]);
 	}
 
 	public function index() {
@@ -22,6 +22,10 @@ class QuestionController extends Controller
         return view('questions.questions', ['questions' => $questions]);
 		//return view('questions.add_questions');
 	}
+
+    public function addQuestion() {
+        return view('questions.add_questions');
+    }
 
    	public function postQuestion(Request $request){
 

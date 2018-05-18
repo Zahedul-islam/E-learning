@@ -25,7 +25,7 @@ Route::get('/contact', function(){
 	return view('contact');
 })->name('contact');
 
-Route::get('/questions', 'QuestionController@index')->name('questions');
+/*Route::get('/questions', 'QuestionController@index')->name('questions');
 
 Route::middleware(['auth'])->group(function(){
 
@@ -35,7 +35,16 @@ Route::middleware(['auth'])->group(function(){
 
 	Route::post('/post_question', 'QuestionController@postQuestion');
 
-});
+});*/
+
+Route::resource('questions', 'QuestionController');
+
+/*Route::get('/questions', 'QuestionController@index')->name('questions');
+
+Route::get('/add_question', 'QuestionController@addQuestion');
+
+Route::post('/post_question', 'QuestionController@postQuestion');*/
+
 
 /*Route::get('/add_questions', function(){
 	return view('questions.add_questions');
