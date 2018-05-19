@@ -53,4 +53,5 @@ Route::middleware(['check.role:teacher'])->group(function() {
 
 Route::middleware(['check.role:admin'])->group(function() {
 	Route::get('/admin', 'AdminController@index');
+	Route::resource('/admin/categories', 'CategoryController');
 });
