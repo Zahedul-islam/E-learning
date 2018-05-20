@@ -24,8 +24,8 @@
                     @endif
 
                     <div class="row">
-                         <form method="POST" action="{{ url('/post_question') }}" enctype="multipart/form-data">
-                        @csrf
+
+                        {{ Form::open(['method'=>'POST', 'route'=>'questions.store', 'class'=>'form-horizontal']) }}
 
                         <div class="form-group row">
                             <label for="post_title" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>
@@ -77,7 +77,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    {{ Form::close() }}
                     </div>
                 </div>
             </div>
