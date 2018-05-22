@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('mobile',15);
             $table->enum('role', ['admin', 'teacher', 'student'])->default('student');
-            $table->string('profile_pic');
+            $table->string('profile_pic')->default("");
             $table->timestamps();
         });
     }

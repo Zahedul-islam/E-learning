@@ -70,15 +70,15 @@ Route::post('/addContent', 'ContentController@addContent');
 Route::get('/post', 'PostController@post');
 Route::post('/addPost', 'PostController@addPost');
 
-Route::middleware(['check.role:student'])->group(function() {
+Route::middleware(['check.role:student'])->prefix("student")->group(function() {
 
 });
 
-Route::middleware(['check.role:teacher'])->group(function() {
+Route::middleware(['check.role:teacher'])->prefix("teacher")->group(function() {
 
 });
 
-Route::middleware(['check.role:admin'])->group(function() {
-	Route::get('/admin', 'AdminController@index');
-	Route::resource('/admin/categories', 'CategoryController');
+Route::middleware(['check.role:admin'])->prefix("admin")->group(function() {
+	Route::get('/', 'AdminController@index');
+	Route::resource('/categories', 'CategoryController');
 });
