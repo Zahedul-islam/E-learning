@@ -49,8 +49,6 @@ class ContentController extends Controller
     {
         if($request->hasFile('content')) {
 
-            echo 'here';
-
             $file = $request->content;
             $filename = $file->getClientOriginalName();
             $extension = $file->extension();
@@ -65,7 +63,7 @@ class ContentController extends Controller
             $content->save();
         }
 
-        //return redirect()->route('contents.index');
+        return redirect()->route('contents.index');
     }
 
     /**
