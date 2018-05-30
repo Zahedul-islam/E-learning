@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContentSubjectsTable extends Migration
+class CreateContentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateContentSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_subjects', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('subject');
+            $table->integer('user_id');
+            $table->integer('series_id');
+            $table->integer('category_id');
+            $table->string('filename');
+            $table->string('extension');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateContentSubjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('content_subjects');
+        Schema::dropIfExists('contents');
     }
 }

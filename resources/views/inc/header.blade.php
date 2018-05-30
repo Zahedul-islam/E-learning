@@ -23,7 +23,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="/class">Class</a></li>
 						<li><a href="/subject">Subject</a></li>
-						<li><a href="/content">Content</a></li>
+						<li><a href="/teacher/contents/create">Content</a></li>
 						<li><a href="/post">Add Post</a></li>
 					</ul>
 				</li>

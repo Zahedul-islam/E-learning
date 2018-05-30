@@ -60,13 +60,6 @@ Route::get('/videos', function() {
 	return view('videos');
 })->name('videos');
 
-Route::get('/subject', 'ContentController@subject'); 
-Route::post('/addSubject', 'ContentController@addSubject');
-Route::get('/class', 'ContentController@class'); 
-Route::post('/addClass', 'ContentController@addClass');
-Route::get('/content', 'ContentController@content');
-Route::post('/addContent', 'ContentController@addContent');
-
 Route::get('/post', 'PostController@post');
 Route::post('/addPost', 'PostController@addPost');
 
@@ -75,7 +68,7 @@ Route::middleware(['check.role:student'])->prefix("student")->group(function() {
 });
 
 Route::middleware(['check.role:teacher'])->prefix("teacher")->group(function() {
-
+	Route::resource('/contents', 'ContentController');
 });
 
 Route::middleware(['check.role:admin'])->prefix("admin")->group(function() {

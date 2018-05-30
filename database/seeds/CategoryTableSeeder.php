@@ -16,7 +16,7 @@ class CategoryTableSeeder extends Seeder
 
         for($i=0; $i<10; $i++) {
         	Category::create([
-        		'name'=>$faker->name
+        		'name'=>$faker->sentence(3)
         	]);
         }
     }

@@ -16,19 +16,9 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if(!Auth::user()->hasRole($role)) {
+        if(!Auth::check() || !Auth::user()->hasRole($role)) {
 
             return redirect('/');
-            
-            // Redirect somewhere as user is not authorized to access this route
-
-            /*if($role == "student") {
-
-            } elseif($role == "teacher") {
-
-            } elseif($role == "admin") {
-
-            }*/
         }
 
         return $next($request);
